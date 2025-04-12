@@ -1,31 +1,29 @@
 <nav class="p-4 w-full">
-
-  <ul class="menu bg-base-200 sm:menu-horizontal rounded-box">
-    <li>
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <path fill="currentColor"
-            d="M21 17h-2V9h2V7a1 1 0 0 0-.594-.914l-9.432-4.191l-8.421 4.21A1 1 0 0 0 2 7v2h2v8H2v4h19zm-5-8v8h-3V9zM7 9h3v8H7z" />
-        </svg>
-        Por capital
-      </a>
-    </li>
-    <li>
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <path fill="currentColor" d="m14.303 6l-3-2H6V2H4v20h2v-8h4.697l3 2H20V6z" />
-        </svg>
-        Por país
-      </a>
-    </li>
-    <li>
-      <a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-          <path fill="currentColor" d="m9 6.882l-7-3.5v13.236l7 3.5l6-3l7 3.5V7.382l-7-3.5zM15 15l-6 3V9l6-3z" />
-        </svg>
-        Por región
-      </a>
-    </li>
-  </ul>
-
+    <ul class="menu bg-base-200 sm:menu-horizontal rounded-box">
+      <li>
+        <a routerLink="by-capital" routerLinkActive="btn-primary" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <path fill="currentColor"
+              d="M21 17h-2V9h2V7a1 1 0 0 0-.594-.914l-9.432-4.191l-8.421 4.21A1 1 0 0 0 2 7v2h2v8H2v4h19zm-5-8v8h-3V9zM7 9h3v8H7z" />
+          </svg>
+          Por capital
+        </a>
+      </li>
+      <li>
+        <a routerLink="by-country" routerLinkActive="btn-primary" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <path fill="currentColor" d="m14.303 6l-3-2H6V2H4v20h2v-8h4.697l3 2H20V6z" />
+          </svg>
+          Por país
+        </a>
+      </li>
+      <li>
+        <a routerLink="by-region" routerLinkActive="btn-primary" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <path fill="currentColor" d="m9 6.882l-7-3.5v13.236l7 3.5l6-3l7 3.5V7.382l-7-3.5zM15 15l-6 3V9l6-3z" />
+          </svg>
+          Por región
+        </a>
+      </li>
+    </ul>
 </nav>

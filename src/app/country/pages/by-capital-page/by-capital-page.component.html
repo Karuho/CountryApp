@@ -1,1 +1,6 @@
-<p>by-capital-page works!</p>,
+<country-search-input
+placeholder="Buscar por capital"
+(value)="onSearch($event)"
+/>
+
+<country-list [countries]="countries()" />
