@@ -13,24 +13,55 @@
     </thead>
     <tbody>
       @for (country of countries(); track country.cca2; let index = $index) {
-        <tr>
-          <td>{{ index + 1 }}</td>
-          <td>{{ country.flag }}</td>
-          <td>
-            <img
-            [src]="country.flags.svg"
-            [alt]="country.name.common"
-            class="w-10"
-            />
-          </td>
-          <td>{{ country.name.common }}</td>
-          <td>{{ country.capital }}</td>
-          <td>{{ country.population }}</td>
-          <td>
-            <a class="link-primary cursor-pointer">Más Información</a>
-          </td>
-        </tr>
+      <tr>
+        <td>{{ index + 1 }}</td>
+        <td>{{ country.flag }}</td>
+        <td>
+          <img [src]="country.flagSvg" [alt]="country.name" class="w-10" />
+        </td>
+        <td>{{ country.name }}</td>
+        <td>{{ country.capital }}</td>
+        <td>
+          <span class="badge badge-secondary">
+            {{ country.population | number }}
+          </span>
+        </td>
+        <td>
+          <a [routerLink]="['/country/by', country.cca2]" class="link-primary cursor-pointer">Más Información</a>
+        </td>
+      </tr>
 
+      }@if (errorMessage()) {
+      <tr>
+        <td colspan="8" class="text-center">
+          <span class="badge badge-error">
+            {{ errorMessage() }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-2h2zm0-4h-2V7h2z" />
+            </svg>
+          </span>
+        </td>
+      </tr>
+      }
+
+      <!-- -->
+      @if (countries().length == 0 && !isLoading()) {
+      <tr>
+        <td colspan="8" class="text-center">
+          <b><u>No se encontraron resultados</u></b>
+        </td>
+      </tr>
+      }
+
+      <!-- -->
+      @if (isLoading()) {
+      <tr>
+        <td colspan="8" class="text-center">
+          Buscando
+          <span colspan="8" class="bg-center loading loading-spinner loading-sm"><br></span>
+        </td>
+      </tr>
       }
     </tbody>
   </table>

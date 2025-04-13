@@ -25,13 +25,13 @@ export const countryRoutes: Routes = [
       },
 
       {
-        path: '**',
-        redirectTo: 'by-capital',
+        path: 'by/:code',
+        component: CountryPageComponent,
       },
 
       {
-        path: 'by/:code',
-        component: CountryPageComponent,
+        path: '**',
+        redirectTo: 'by-capital',
       },
     ]
   },
