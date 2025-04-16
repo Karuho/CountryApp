@@ -6,4 +6,7 @@ export interface Country {
   name: string;
   capital: string;
   population: number;
+  region: string;
+  subRegion: string;
+  timezones: string;
 }
