@@ -1,4 +1,9 @@
-<country-search-input placeholder="Buscar por capital" (value)="query.set($event)" />
+<country-search-input
+placeholder="Buscar por capital"
+(value)="query.set($event)"
+[debounceTime]="800"
+[initialValue]="query()"
+/>
 
 <!-- Angular 19 or lower
 @if (isError()) {
