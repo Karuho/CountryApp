@@ -1,10 +1,23 @@
-<section class="mt-5">
-  <button class="btn btn-primary mx-1">Africa</button>
-  <button class="btn btn-secondary mx-1">Americas</button>
-  <button class="btn btn-error mx-1">Asia</button>
-  <button class="btn btn-warning mx-1">Europe</button>
-  <button class="btn btn-success mx-1">Oceania</button>
-  <button class="btn btn-info mx-1">Antarctic</button>
+<h1 class="text-2xl">Por región</h1>
+<h3 class="text-lg">Seleccione una región</h3>
+
+<section class="row mt-2">
+  <div class="flex-col">
+    @for (region of regions; track region) {
+      <button
+      class="btn btn-outline mr-2 w-[100px]"
+      (click)="selectRegion(region)"
+      [class.btn-primary]="selectedRegion() == region"
+      >
+        {{ region }}
+      </button>
+    }
+  </div>
 </section>
 
-<country-list [countries]="[]" />
+<country-list
+[countries]="countryResource.value() ?? []"
+[errorMessage]="countryResource.error()"
+[isEmpty]="countryResource.value()?.length == 0"
+[isLoading]="countryResource.isLoading()"
+ />
